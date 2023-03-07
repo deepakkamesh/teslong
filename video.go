@@ -138,6 +138,7 @@ func (s *Video) startStreamer() {
 			frame, err = s.cam.ReadFrame()
 			if err != nil || len(frame) == 0 {
 				log.Printf("Failed tp read webcam frame:%v or frame size 0", err)
+				continue
 			}
 
 			// Convert frame to JPEG.
